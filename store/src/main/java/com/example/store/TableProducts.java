@@ -12,5 +12,11 @@ public class TableProducts {
         Product pencil = new Product(3, "Pencil", "Faber Castel pencil", 2.99);
         Product sharpener = new Product(4, "Sharpener", "Standard sharpener", 7.99);
         Product notebook = new Product(5, "Notebook", "Blank notebook", 15.99);
+
+        this.products.add(pen);
+        this.products.add(eraser);
+        this.products.add(pencil);
+        this.products.add(sharpener);
+        this.products.add(notebook);
     }
 }
