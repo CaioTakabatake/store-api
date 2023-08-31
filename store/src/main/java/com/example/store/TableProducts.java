@@ -19,4 +19,44 @@ public class TableProducts {
         this.products.add(sharpener);
         this.products.add(notebook);
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public List<Product> getAllProducts() {
+        return this.getProducts();
+    }
+
+    public Product getProductById(int id) {
+        for (Product product : products) {
+            if (product.getId() == id) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    public Product addProduct(Product product) {
+        int newId = products.size() + 1;
+        product.setId(newId);
+        products.add(product);
+        return product;
+    }
+
+    public Product updateProduct(int id, Product updatedProduct) {
+        for (Product product : products) {
+            if (product.getId() == id) {
+                product.setName(updatedProduct.getName());
+                product.setDescription(updatedProduct.getDescription());
+                product.setUnitaryPrice(updatedProduct.getUnitaryPrice());
+                return product;
+            }
+        }
+        return null;
+    }
+
+    public void deleteProduct(int id) {
+        products.removeIf(product -> product.getId() == id);
+    }
 }
